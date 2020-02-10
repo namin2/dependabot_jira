@@ -26,6 +26,7 @@ jobs:
         project: ${{ secrets.JIRA_PROJECT_KEY }}
         issuetype: ${{ secrets.JIRA_ISSUE_TYPE }}
         summary: |
-          ${{github.event.pull_request.title }}
+          [${{github.event.repository.name }}] ${{github.event.pull_request.title }}
         description: |
+          ${{github.event.pull_request.html_url }}
           ${{github.event.pull_request.body }}
