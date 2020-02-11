@@ -1,4 +1,4 @@
-name: DEPENDABOT JIRA
+name: Dependabot Jira
 
 on:
   pull_request:
@@ -29,4 +29,3 @@ jobs:
           [${{github.event.repository.name }}] ${{github.event.pull_request.title }}
         description: |
           ${{github.event.pull_request.html_url }}
-          ${{github.event.pull_request.body }}
