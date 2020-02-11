@@ -7,7 +7,7 @@ on:
     branches:
       - master
 jobs:
-  build:
+  create_jira:
     name: Dependabot Jira
     runs-on: ubuntu-latest
     if: contains( github.event.pull_request.labels.*.name, 'dependencies')
