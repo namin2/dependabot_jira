@@ -16,5 +16,3 @@ This workflow creates a Jira issue when a Dependabot pull request is created wit
     - Variables for issue creation
       - `JIRA_PROJECT_KEY` - Example: `JIRA`
       - `JIRA_ISSUE_TYPE` - Example: `Story`
-## Configuration
-Currently the default label is `dependencies` but this can be changed to use the [default label](https://Dependabot.com/docs/config-file/#default_labels) used in the repository
