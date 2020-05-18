@@ -6,6 +6,14 @@ on:
       - opened
     branches:
       - master
+
+env:
+  JIRA_BASE_URL: #Jira URL
+  JIRA_USER_EMAIL: #jira user email
+  JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+  JIRA_PROJECT: #Jira project key
+  JIRA_ISSUE_TYPE: #Jira issue type
+
 jobs:
   create_jira:
     name: Dependabot Jira
@@ -15,16 +23,16 @@ jobs:
     - name: Login to Jira
       uses: atlassian/gajira-login@v2.0.0
       env:
-        JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
-        JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
+        JIRA_BASE_URL: ${{ env.JIRA_BASE_URL }}
+        JIRA_USER_EMAIL: ${{ env.JIRA_USER_EMAIL }}
         JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
 
     - name: Create Jira Issue
       id: create
       uses: atlassian/gajira-create@v2.0.0
       with:
-        project: ${{ secrets.JIRA_PROJECT_KEY }}
-        issuetype: ${{ secrets.JIRA_ISSUE_TYPE }}
+        project: ${{ env.JIRA_PROJECT_KEY }}
+        issuetype: ${{ env.JIRA_ISSUE_TYPE }}
         summary: |
           [${{github.event.repository.name }}] ${{github.event.pull_request.title }}
         description: |
