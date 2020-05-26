@@ -31,7 +31,7 @@ jobs:
       id: create
       uses: atlassian/gajira-create@v2.0.0
       with:
-        project: ${{ env.JIRA_PROJECT_KEY }}
+        project: ${{ env.JIRA_PROJECT }}
         issuetype: ${{ env.JIRA_ISSUE_TYPE }}
         summary: |
           [${{github.event.repository.name }}] ${{github.event.pull_request.title }}
