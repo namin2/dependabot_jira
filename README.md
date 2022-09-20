@@ -14,5 +14,5 @@ This workflow creates a Jira issue when a Dependabot pull request is created wit
       - `JIRA_API_TOKEN` - [Token Generation Instructions](https://confluence.atlassian.com/cloud/api-tokens-938839638.html)
       - `JIRA_USER_EMAIL`
     - Variables for issue creation
-      - `JIRA_PROJECT_KEY` - Example: `JIRA`
+      - `JIRA_PROJECT` - Example: `JIRA`
       - `JIRA_ISSUE_TYPE` - Example: `Story`
